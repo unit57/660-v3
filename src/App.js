@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-require('../public/main.scss');
+//require('../public/main.scss');
 
 class App extends Component {
 
 	render() {
 		return (
-			<h1> Hello World!</h1>
+
+			<div>
+				<h1> Hello World!!!</h1>
+				<h1> Hello World!!!</h1>
+				<h1> Hello World!!!</h1>
+		
+			</div>
+
 		);
 	}
 };
