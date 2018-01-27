@@ -1,6 +1,2 @@
-$primary: red;
-
-h1 {
-	color: $primary;
-}
-
+button:focus {outline:0;}
+@import '../src/stylesheets/Nav';

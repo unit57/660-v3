@@ -1,3 +1,4 @@
+
 var express = require('express');
 var path = require('path');
 
@@ -14,6 +15,6 @@ console.log('Server listening on port.. ' + PORT);
 
 console.log('This ish works yay!!!');
 
-app.get('/', function(req, res) {
+app.get('/*', function(req, res) {
 	res.sendFile(path.join(__dirname + '/../public/index.html'))
 });
