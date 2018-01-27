@@ -31,7 +31,7 @@ class Nav extends Component {
 						 	<button className="dropbtn">About</button>
 						  		<div className="dropdown-content">
 								    <Link to ="/about660">About 660</Link>
-								    <Link to ="/about-archetype">About 660</Link>
+								    <Link to ="/about-archetype">About Archetype</Link>
 								    {/*<a href="#">Link 3</a>*/}
 						  		</div>
 						</div>
