@@ -25807,9 +25807,9 @@ var Nav = function (_Component) {
 								'About 660'
 							),
 							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-								'a',
-								{ href: '/about-archetype' },
-								'About Archetype'
+								__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+								{ to: '/about-archetype' },
+								'About 660'
 							)
 						)
 					),
