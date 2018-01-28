@@ -1,10 +1,11 @@
 - event brite for tickets
 
-- mail chimp for sign up
+- mobile nav
+
+- https://formspree.io/ for contact us
+	 -make a thank you for submitting page
 
 - Archetype - Minutes sub routers
-
-- contact form (maybe have to use a php script)
 
 - split events between upcoming and past 
 
@@ -12,4 +13,14 @@
 
 - analytics
 
+- social links
+
 - how to docs
+
+- 404 pages
+
+- validation for artists web pages
+
+- review required fields on contentful
+
+- ssl cert

@@ -32,7 +32,7 @@ class Events extends Component {
                 <img className="img-fluid" src={event.fields.eventImageLink} alt=""/>
             </div>
 
-            <div className="col-md-4">
+            <div className="col-md-8">
               <p>{formatDate}</p>
               <p>{event.fields.eventName}</p>
               <p>{event.fields.eventDescription}</p>
@@ -58,7 +58,7 @@ class Events extends Component {
     //console.log('match', match)
     return (
       <div className='component-events row'>
-        <h2> Events </h2>
+        <h2> Events at The Archetype </h2>
         {this.makeLinks}
       </div>
     );

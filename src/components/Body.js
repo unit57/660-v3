@@ -53,8 +53,22 @@ Body.defaultProps = {
 	},{
 		fields:{
 			about:"Fotget about dre",
+			imageLink:"http://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/9/97//doc-brown.jpg?itok=7fJMvKsO",
+			name:" John Fathom",
+			website:"things.com"
+		}
+	},{
+		fields:{
+			about:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			imageLink:"https://media.npr.org/assets/img/2014/08/25/mcfly-vest_wide-c3b751c04946bf6bbbe3d4d41b033d5c3e88cdc8.jpg?s=1400",
+			name:"Alex ",
+			website:"https://www.facebook.com/alex.pergament.3"
+		}
+	},{
+		fields:{
+			about:"Fotget about dre",
 			imageLink:"https://www.cicis.com/media/1176/pizza_trad_pepperonibeef.png",
-			name:" Person 2",
+			name:"John",
 			website:"things.com"
 		}
 	}],
