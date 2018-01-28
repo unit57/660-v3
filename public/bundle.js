@@ -4671,11 +4671,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Nav__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Body__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Footer__ = __webpack_require__(258);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -4712,35 +4714,33 @@ var App = function (_Component) {
 	}
 
 	App.prototype.componentDidMount = function componentDidMount() {
+		var _this2 = this;
 
 		// get artists
-		/*		client.getEntries({
-  			  'content_type': 'artists',
-  			   order: 'sys.createdAt'
-  			})
-  			.then((artistsResponse) => {
-  				return artistsResponse.items	   
-  		})
-  		.then((artistsItems)=>{
-  		// get events
-  			const events = client.getEntries({
-  			  'content_type': 'event',
-  			   order: 'sys.createdAt'
-  			})
-  			// sort events in order by date 
-  			.then((eventsResponse) => {
-  				let sortedEvents = eventsResponse.items;
-  				return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'],['asc']);		
-  			})
-  			.then((eventsResponse)=>{
-  				// console.log('eventsResponse', eventsResponse)
-  				// console.log('artistsResponse', artistsResponse)
-  				this.setState({
-  					artists: artistsItems,
-  					events: eventsResponse
-  				})
-  			})
-  		})*/
+		client.getEntries({
+			'content_type': 'artists',
+			order: 'sys.createdAt'
+		}).then(function (artistsResponse) {
+			return artistsResponse.items;
+		}).then(function (artistsItems) {
+			// get events
+			var events = client.getEntries({
+				'content_type': 'event',
+				order: 'sys.createdAt'
+			})
+			// sort events in order by date 
+			.then(function (eventsResponse) {
+				var sortedEvents = eventsResponse.items;
+				return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'], ['asc']);
+			}).then(function (eventsResponse) {
+				// console.log('eventsResponse', eventsResponse)
+				// console.log('artistsResponse', artistsResponse)
+				_this2.setState({
+					artists: artistsItems,
+					events: eventsResponse
+				});
+			});
+		});
 	};
 
 	App.prototype.render = function render() {
@@ -4750,7 +4750,8 @@ var App = function (_Component) {
 			'div',
 			{ className: 'component-app container-fluid' },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Nav__["a" /* default */], null),
-			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Body__["a" /* default */], { artists: this.state.artists, events: this.state.events })
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Body__["a" /* default */], { artists: this.state.artists, events: this.state.events }),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_Footer__["a" /* default */], null)
 		);
 	};
 
@@ -26440,7 +26441,8 @@ var Contact = function (_Component) {
 				'h2',
 				null,
 				' Contact '
-			)
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('iframe', { src: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12096.28917536404!2d-74.0649565!3d40.716425!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3fe4cb5da1b585ed!2s660+Studios!5e0!3m2!1sen!2sus!4v1517120863651', width: '600', height: '450', frameBorder: '0', style: { border: 0 }, allowFullScreen: true })
 		);
 	};
 
@@ -48711,6 +48713,66 @@ function createLinkResolver(globalSetting) {
 }.call(this));
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(66), __webpack_require__(27)(module)))
+
+/***/ }),
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+//import { Link, Route } from 'react-router-dom';
+
+
+var Footer = function (_Component) {
+	_inherits(Footer, _Component);
+
+	function Footer(props) {
+		_classCallCheck(this, Footer);
+
+		return _possibleConstructorReturn(this, _Component.call(this, props));
+	}
+
+	Footer.prototype.componentDidMount = function componentDidMount() {};
+
+	Footer.prototype.render = function render() {
+
+		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+			'div',
+			{ className: 'component-footer row' },
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'col-md-4' },
+				'powered by contentful'
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'col-md-4' },
+				'address'
+			),
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				{ className: 'col-md-4' },
+				'facebook | instagram'
+			)
+		);
+	};
+
+	return Footer;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Footer);
 
 /***/ })
 /******/ ]);

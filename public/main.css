@@ -49,7 +49,14 @@ button:focus {
     background-color: #3e8e41; }
 
 .component-body {
-  padding: 0 45px 0 45px; }
+  padding: 0 45px 0 45px;
+  min-height: 700px; }
+
+.component-footer {
+  border: solid black 1px;
+  height: 57px;
+  text-align: center;
+  margin-top: 15px; }
 
 .component-artists .artists-link {
   color: black; }

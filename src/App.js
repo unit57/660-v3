@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Nav from './components/Nav';
 import Body from './components/Body';
+import Footer from './components/Footer';
 
 require('../public/main.scss');
 
@@ -33,7 +34,7 @@ class App extends Component {
 	componentDidMount(){
 		
 		// get artists
-/*		client.getEntries({
+		client.getEntries({
 			  'content_type': 'artists',
 			   order: 'sys.createdAt'
 			})
@@ -59,7 +60,7 @@ class App extends Component {
 					events: eventsResponse
 				})
 			})
-		})*/
+		})
 	}
 
 	render() {
@@ -69,6 +70,7 @@ class App extends Component {
 			<div className="component-app container-fluid">
 				<Nav />
 				<Body artists={this.state.artists} events={this.state.events}/>
+				<Footer />
 			</div>
 
 		);
