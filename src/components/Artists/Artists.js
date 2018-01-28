@@ -15,7 +15,7 @@ class Artists extends Component {
 		let linkList = this.props.artists.map((artist, index) => {
 			return (
 				<li key={index}>
-					<Link to={`${this.props.match.url}/${artist.name}`}>{artist.name}
+					<Link to={`${this.props.match.url}/${artist.fields.name}`}>{artist.fields.name}
 					</Link>
 				</li>
 			);

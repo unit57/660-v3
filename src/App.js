@@ -32,8 +32,8 @@ class App extends Component {
 
 	componentDidMount(){
 		
-/*		// get artists
-		client.getEntries({
+		// get artists
+/*		client.getEntries({
 			  'content_type': 'artists',
 			   order: 'sys.createdAt'
 			})
@@ -42,27 +42,29 @@ class App extends Component {
 		})
 		.then((artistsItems)=>{
 		// get events
-				const events = client.getEntries({
-				  'content_type': 'event',
-				   order: 'sys.createdAt'
+			const events = client.getEntries({
+			  'content_type': 'event',
+			   order: 'sys.createdAt'
+			})
+			// sort events in order by date 
+			.then((eventsResponse) => {
+				let sortedEvents = eventsResponse.items;
+				return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'],['asc']);		
+			})
+			.then((eventsResponse)=>{
+				// console.log('eventsResponse', eventsResponse)
+				// console.log('artistsResponse', artistsResponse)
+				this.setState({
+					artists: artistsItems,
+					events: eventsResponse
 				})
-				// sort events in order by date 
-				.then((eventsResponse) => {
-					let sortedEvents = eventsResponse.items;
-					return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'],['asc']);		
-				})
-				.then((eventsResponse)=>{
-					// console.log('eventsResponse', eventsResponse)
-					// console.log('artistsResponse', artistsResponse)
-					this.setState({
-						artists: artistsItems,
-						events: eventsResponse
-					})
-				})
+			})
 		})*/
 	}
 
-	render() {	
+	render() {
+/*	console.log('get event model', this.state.events)	
+	console.log('get artist model', this.state.artists)	*/
 		return (
 			<div className="component-app container-fluid">
 				<Nav />

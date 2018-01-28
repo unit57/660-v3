@@ -10,20 +10,22 @@ class Artist extends Component {
     //let artist= this.props.artists.map((artist, index) => {
       //console.log('artist name ', artist.name)
       let artist = this.props.artists.find((a)=>{
-        return a.name === match.params.name
+        return a.fields.name === match.params.name
       })
       
       return (
              <div>
-               <h3>{artist.name}</h3>
-               <h4>{artist.about}</h4>
+               <h3>{artist.fields.name}</h3>
+               <h4>{artist.fields.about}</h4>
+               <p> {artist.fields.website}</p>
+               <img className="img" src={artist.fields.imageLink} alt="" width="50%" height="50%"/>
              </div>
       );
     };
   
   render(){
     let match = this.props.match
-    
+
     return(
       <div className="component-artists">
         <Link to='/artists'> Artists </Link>
