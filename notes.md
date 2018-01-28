@@ -1,6 +1,7 @@
 - event brite for tickets
+- mobile view
+	- mobile nav
 
-- mobile nav
 
 - https://formspree.io/ for contact us
 	 -make a thank you for submitting page
@@ -19,8 +20,11 @@
 
 - 404 pages
 
-- validation for artists web pages
+- validation for artists web page url (in contentful) 
+	-without https it it will tey to link locally
 
 - review required fields on contentful
 
 - ssl cert
+
+- protect thank you route

@@ -9,6 +9,8 @@ import Home from './Home';
 import Contact from './Contact';
 import About660 from './About660';
 import AboutArchetype from './AboutArchetype';
+import Location from './Location';
+import ContactThankYou from './ContactThankYou';
 
 
 class Body extends Component {
@@ -34,6 +36,8 @@ class Body extends Component {
 					<Route exact path={'/contact'} component={Contact} />
 					<Route exact path={'/about660'} component={About660} />
 					<Route exact path={'/about-archetype'} component={AboutArchetype} />
+					<Route exact path={'/location'} component={Location} />
+					<Route exact path={'/thankyou'} component={ContactThankYou} />
 				</Switch>
 			</div>
 

@@ -3,4 +3,16 @@
 	min-height: 57px;
 	text-align: center;
 	margin-top: 15px;
+
+	.address {
+		text-align: center;
+	}
+
+	.social, .address, .contentful-attr {
+		padding: 10px;
+	}
+	.contentful-attr {
+		background: black;
+		padding: 15px;
+	}
 }

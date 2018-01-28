@@ -34,7 +34,7 @@ class App extends Component {
 	componentDidMount(){
 		
 		// get artists
-		client.getEntries({
+		/*client.getEntries({
 			  'content_type': 'artists',
 			   order: 'sys.createdAt'
 			})
@@ -60,7 +60,7 @@ class App extends Component {
 					events: eventsResponse
 				})
 			})
-		})
+		})*/
 	}
 
 	render() {

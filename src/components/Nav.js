@@ -9,13 +9,13 @@ class Nav extends Component {
 	render(){
 		return(
 			<div className='component-nav'>
-				<nav>
-					<div className="nav-left">
+				<nav className="row">
+					<div className="nav-left col-md-6">
 						<div className="dropdown">
 						 	<Link to="/"><button className="dropbtn">LOGO</button></Link>
 						</div>
 					</div>
-					<div className="nav-right">
+					<div className="nav-right  col-md-6">
 
 						<div className="dropdown">
 						 	<Link to="/"><button className="dropbtn">Home</button></Link>
@@ -23,6 +23,7 @@ class Nav extends Component {
 						<div className="dropdown">
 						 	<Link to="/artists"><button className="dropbtn">Artists</button></Link>
 						</div>
+						
 						<div className="dropdown">
 						 	<Link to="/events"><button className="dropbtn">Events</button></Link>
 						</div>

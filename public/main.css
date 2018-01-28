@@ -3,6 +3,9 @@ button:focus {
 
 .component-nav {
   display: relative;
+  /* 	.nav-left, .nav-right {
+		display: inline-block;
+	} */
   /* Style The Dropdown Button */
   /* The container <div> - needed to position the dropdown content */
   /* Dropdown Content (Hidden by Default) */
@@ -13,12 +16,8 @@ button:focus {
   .component-nav nav {
     min-height: 60px;
     display: relative; }
-  .component-nav .nav-left, .component-nav .nav-right {
-    display: inline-block; }
   .component-nav .nav-right {
-    position: absolute;
-    right: 15px;
-    top: 0px; }
+    text-align: right; }
   .component-nav .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -35,7 +34,8 @@ button:focus {
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1; }
+    z-index: 1;
+    text-align: left; }
   .component-nav .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -57,6 +57,43 @@ button:focus {
   min-height: 57px;
   text-align: center;
   margin-top: 15px; }
+  .component-footer .address {
+    text-align: center; }
+  .component-footer .social, .component-footer .address, .component-footer .contentful-attr {
+    padding: 10px; }
+  .component-footer .contentful-attr {
+    background: black;
+    padding: 15px; }
+
+.component-contact .contact-form {
+  border: solid blue 1px; }
+
+.component-contact .form-body {
+  border: solid red 1px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 0 20px; }
+
+.component-contact .form-label {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center; }
+
+.component-contact .contact-email {
+  border: solid black 1px;
+  margin-bottom: 20px; }
+
+.component-contact .contact-body {
+  border: solid black 1px;
+  margin-bottom: 20px; }
+
+.component-contact .contact-submit-btn {
+  border: solid black 1px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px; }
 
 .component-artists .artists-link {
   color: black; }
@@ -74,28 +111,30 @@ button:focus {
   margin-bottom: 0;
   text-align: center; }
 
-.component-artist {
-  margin-bottom: 5px; }
-  .component-artist .artist-wrapper {
-    border: solid black 1px;
-    padding: 25px; }
-  .component-artist .image-wrapper {
-    margin: 0 auto; }
-  .component-artist .artist-img {
-    display: block;
-    text-align: center; }
-  .component-artist .artist-name {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 0;
-    font-size: 25px;
-    font-weight: 700;
-    text-align: center; }
-  .component-artist .back-to-artists {
-    display: inline-block;
-    margin: 10px;
-    color: black;
-    text-decoration: none; }
+.component-artist .artist-wrapper {
+  border: solid black 1px;
+  padding: 25px; }
+
+.component-artist .image-wrapper {
+  margin: 0 auto; }
+
+.component-artist .artist-img {
+  display: block;
+  text-align: center; }
+
+.component-artist .artist-name {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center; }
+
+.component-artist .back-to-artists {
+  display: inline-block;
+  margin: 10px;
+  color: black;
+  text-decoration: none; }
 
 .component-events .event-link {
   color: black;
@@ -110,6 +149,3 @@ button:focus {
   padding: 15px 10px 15px 10px;
   color: black;
   text-decoration: none; }
-
-.component-event .event-container {
-  border: solid black 1px; }
