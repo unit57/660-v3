@@ -61,10 +61,11 @@ Body.defaultProps = {
 	eventsDefault: [{
 		fields: {
 			eventDate:"2018-01-24",
-			eventDescription:"JUST A STAGE [Stage Series]↵Each musician has their own stage, scattered throughout Archetype. ↵↵The Stage Series is a month-long experimentation of of the relationships between the music, the audience, and the space.↵↵Mostly BYOB↵By Donation ($3 Suggested)↵* * * * * *↵DONATE to Archetype so we can continue making strange, sincere art in Jersey City. ",
+			eventDescription:"JUST A STAGE [Stage Series]↵Each musician has their own stage, scattered throughout Archetype. ↵↵The Stage Series is a month-long experimentation of of the relationships between the music, the audience, and the space.",
 			eventImageLink:"https://scontent-lga3-1.xx.fbcdn.net/v/t31.0-8/26952251_10109176470112219_4532918177396622524_o.jpg?oh=75b3697596c51f8fd3e6852e1e3bfdab&oe=5AF2E46B",
 			eventName:"JUST A STAGE | After School",
-			eventTime:"7pm"
+			eventTime:"7pm",
+			eventTickets:"https://www.eventbrite.com/preview?eid=42601420997"
 		}
 	},{
 		fields: {
@@ -72,7 +73,8 @@ Body.defaultProps = {
 			eventDescription:"Today things will happen and it will be possible",
 			eventImageLink:"http://nohopizza.com/images/pizza.jpeg",
 			eventName:"Event 2",
-			eventTime:"10pm"
+			eventTime:"10pm",
+			eventTickets:""
 		}
 	}]
 }

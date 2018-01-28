@@ -6,6 +6,15 @@ class Event extends Component {
     super(props)
 
   }
+  getTickets(event) {
+    if (event.fields.eventTickets) {
+      return (
+        <span> Get Tickets &nbsp;
+          <a className="event-tickets" href={event.fields.eventTickets} target="_blank">here</a>.
+        </span>
+      );
+    }
+  }
   makeEvent(match) {
     //let event= this.props.events.map((event, index) => {
       //console.log('event name ', event.name)
@@ -19,6 +28,7 @@ class Event extends Component {
                <h4>{event.fields.eventDescription}</h4>
                <p> {event.fields.eventDate}</p>
                <p> {event.fields.eventTime}</p>
+               <p> {this.getTickets(event)}</p>
                <img className="img" src={event.fields.eventImageLink} alt="" width="50%" height="50%"/>
              </div>
       );
@@ -26,11 +36,11 @@ class Event extends Component {
   
   render(){
     if(!this.props.events) {
-      return <h1> Loading</h1>
+      return <h1> Loading </h1>
     }
     let match = this.props.match
     return(
-      <div className="component-events">
+      <div className="component-event">
         <Link to='/events'> Events </Link>
         {this.makeEvent(match)}
       </div>

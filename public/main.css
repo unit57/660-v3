@@ -48,21 +48,23 @@ button:focus {
   .component-nav .dropdown:hover .dropbtn {
     background-color: #3e8e41; }
 
-.component-artists {
-  padding-left: 45px;
-  padding-right: 45px; }
-  .component-artists .artists-link {
-    color: black; }
-    .component-artists .artists-link:hover, .component-artists .artists-link:focus {
-      color: black;
-      text-decoration: none; }
-  .component-artists .artist-container {
-    border: solid red 1px;
-    padding: 15px; }
-  .component-artists .artist-name {
-    padding-top: 10px;
-    margin-bottom: 0;
-    text-align: center; }
+.component-body {
+  padding: 0 45px 0 45px; }
+
+.component-artists .artists-link {
+  color: black; }
+  .component-artists .artists-link:hover, .component-artists .artists-link:focus {
+    color: black;
+    text-decoration: none; }
+
+.component-artists .artist-container {
+  border: solid red 1px;
+  padding: 15px; }
+
+.component-artists .artist-name {
+  padding-top: 10px;
+  margin-bottom: 0;
+  text-align: center; }
 
 .component-artist .artist-wrapper {
   border: solid black 1px;
@@ -85,6 +87,23 @@ button:focus {
 
 .component-artist .back-to-artists {
   display: inline-block;
-  margin: 20px;
+  margin: 10px;
   color: black;
   text-decoration: none; }
+
+.component-events .event-link {
+  color: black;
+  text-decoration: none; }
+  .component-events .event-link:hover, .component-events .event-link:focus {
+    text-decoration: none;
+    color: black; }
+
+.component-events .event-container {
+  border: solid black 1px;
+  margin-bottom: 5px;
+  padding: 15px 10px 15px 10px;
+  color: black;
+  text-decoration: none; }
+
+.component-event .event-container {
+  border: solid black 1px; }

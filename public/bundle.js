@@ -25936,10 +25936,11 @@ Body.defaultProps = {
 	eventsDefault: [{
 		fields: {
 			eventDate: "2018-01-24",
-			eventDescription: "JUST A STAGE [Stage Series]↵Each musician has their own stage, scattered throughout Archetype. ↵↵The Stage Series is a month-long experimentation of of the relationships between the music, the audience, and the space.↵↵Mostly BYOB↵By Donation ($3 Suggested)↵* * * * * *↵DONATE to Archetype so we can continue making strange, sincere art in Jersey City. ",
+			eventDescription: "JUST A STAGE [Stage Series]↵Each musician has their own stage, scattered throughout Archetype. ↵↵The Stage Series is a month-long experimentation of of the relationships between the music, the audience, and the space.",
 			eventImageLink: "https://scontent-lga3-1.xx.fbcdn.net/v/t31.0-8/26952251_10109176470112219_4532918177396622524_o.jpg?oh=75b3697596c51f8fd3e6852e1e3bfdab&oe=5AF2E46B",
 			eventName: "JUST A STAGE | After School",
-			eventTime: "7pm"
+			eventTime: "7pm",
+			eventTickets: "https://www.eventbrite.com/preview?eid=42601420997"
 		}
 	}, {
 		fields: {
@@ -25947,7 +25948,8 @@ Body.defaultProps = {
 			eventDescription: "Today things will happen and it will be possible",
 			eventImageLink: "http://nohopizza.com/images/pizza.jpeg",
 			eventName: "Event 2",
-			eventTime: "10pm"
+			eventTime: "10pm",
+			eventTickets: ""
 		}
 	}]
 };
@@ -26174,9 +26176,21 @@ var Events = function (_Component) {
     return _possibleConstructorReturn(this, _Component.call(this, props));
   }
 
-  Events.prototype.componentDidMount = function componentDidMount() {
-    //console.log('props~~~~~', this.props)
-  };
+  Events.prototype.componentDidMount = function componentDidMount() {}
+  //console.log('props~~~~~', this.props)
+
+  /*  getTickets(event) {
+      if (event.fields.eventTickets) {
+        return (
+          <span> Get Tickets &nbsp;
+            <a className="event-tickets" href={event.fields.eventTickets} target="_blank">here</a>.
+          </span>
+        );
+      }
+    }
+    {this.getTickets(event)}*/
+
+  ;
 
   Events.prototype.render = function render() {
 
@@ -26192,7 +26206,7 @@ var Events = function (_Component) {
     //console.log('match', match)
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      { className: 'component-category' },
+      { className: 'component-events row' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h2',
         null,
@@ -26208,13 +26222,43 @@ var Events = function (_Component) {
       var _this2 = this;
 
       var linkList = this.props.events.map(function (event, index) {
+        var dateSplit = event.fields.eventDate.split('-');
+        var formatDate = dateSplit[1] + '.' + dateSplit[2] + '.' + dateSplit[0];
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          { key: index },
+          __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+          { className: 'event-link col-md-12', key: index, to: _this2.props.match.url + '/' + event.fields.eventName },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-            { to: _this2.props.match.url + '/' + event.fields.eventName },
-            event.fields.eventName
+            'div',
+            { className: 'event-container row' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'img-container col-md-4', key: index },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: event.fields.eventImageLink, alt: '' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'col-md-4' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'p',
+                null,
+                formatDate
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'p',
+                null,
+                event.fields.eventName
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'p',
+                null,
+                event.fields.eventDescription
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'p',
+                null,
+                event.fields.eventTime
+              )
+            )
           )
         );
       });
@@ -26253,6 +26297,22 @@ var Event = function (_Component) {
     return _possibleConstructorReturn(this, _Component.call(this, props));
   }
 
+  Event.prototype.getTickets = function getTickets(event) {
+    if (event.fields.eventTickets) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'span',
+        null,
+        ' Get Tickets \xA0',
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'a',
+          { className: 'event-tickets', href: event.fields.eventTickets, target: '_blank' },
+          'here'
+        ),
+        '.'
+      );
+    }
+  };
+
   Event.prototype.makeEvent = function makeEvent(match) {
     //let event= this.props.events.map((event, index) => {
     //console.log('event name ', event.name)
@@ -26285,6 +26345,12 @@ var Event = function (_Component) {
         ' ',
         event.fields.eventTime
       ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'p',
+        null,
+        ' ',
+        this.getTickets(event)
+      ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img', src: event.fields.eventImageLink, alt: '', width: '50%', height: '50%' })
     );
   };
@@ -26294,13 +26360,13 @@ var Event = function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h1',
         null,
-        ' Loading'
+        ' Loading '
       );
     }
     var match = this.props.match;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      { className: 'component-events' },
+      { className: 'component-event' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
         { to: '/events' },
