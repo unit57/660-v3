@@ -4712,35 +4712,33 @@ var App = function (_Component) {
 	}
 
 	App.prototype.componentDidMount = function componentDidMount() {
+		var _this2 = this;
 
 		// get artists
-		/*		client.getEntries({
-  			  'content_type': 'artists',
-  			   order: 'sys.createdAt'
-  			})
-  			.then((artistsResponse) => {
-  				return artistsResponse.items	   
-  		})
-  		.then((artistsItems)=>{
-  		// get events
-  			const events = client.getEntries({
-  			  'content_type': 'event',
-  			   order: 'sys.createdAt'
-  			})
-  			// sort events in order by date 
-  			.then((eventsResponse) => {
-  				let sortedEvents = eventsResponse.items;
-  				return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'],['asc']);		
-  			})
-  			.then((eventsResponse)=>{
-  				// console.log('eventsResponse', eventsResponse)
-  				// console.log('artistsResponse', artistsResponse)
-  				this.setState({
-  					artists: artistsItems,
-  					events: eventsResponse
-  				})
-  			})
-  		})*/
+		client.getEntries({
+			'content_type': 'artists',
+			order: 'sys.createdAt'
+		}).then(function (artistsResponse) {
+			return artistsResponse.items;
+		}).then(function (artistsItems) {
+			// get events
+			var events = client.getEntries({
+				'content_type': 'event',
+				order: 'sys.createdAt'
+			})
+			// sort events in order by date 
+			.then(function (eventsResponse) {
+				var sortedEvents = eventsResponse.items;
+				return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'], ['asc']);
+			}).then(function (eventsResponse) {
+				// console.log('eventsResponse', eventsResponse)
+				// console.log('artistsResponse', artistsResponse)
+				_this2.setState({
+					artists: artistsItems,
+					events: eventsResponse
+				});
+			});
+		});
 	};
 
 	App.prototype.render = function render() {
@@ -25896,16 +25894,16 @@ var Body = function (_Component) {
 				null,
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_6__Home__["a" /* default */] }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/artists', render: function render(props) {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Artists_Artists__["a" /* default */], _extends({}, props, { artists: _this2.props.artistsDefault }));
+						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Artists_Artists__["a" /* default */], _extends({}, props, { artists: _this2.props.artists }));
 					} }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/artists/:name', render: function render(props) {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Artists_Artist__["a" /* default */], _extends({}, props, { artists: _this2.props.artistsDefault }));
+						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Artists_Artist__["a" /* default */], _extends({}, props, { artists: _this2.props.artists }));
 					} }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/events', render: function render(props) {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Events_Events__["a" /* default */], _extends({}, props, { events: _this2.props.eventsDefault }));
+						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Events_Events__["a" /* default */], _extends({}, props, { events: _this2.props.events }));
 					} }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/events/:eventName', render: function render(props) {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Events_Event__["a" /* default */], _extends({}, props, { events: _this2.props.eventsDefault }));
+						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Events_Event__["a" /* default */], _extends({}, props, { events: _this2.props.events }));
 					} }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/contact', component: __WEBPACK_IMPORTED_MODULE_7__Contact__["a" /* default */] }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/about660', component: __WEBPACK_IMPORTED_MODULE_8__About660__["a" /* default */] }),
@@ -26113,6 +26111,8 @@ var Artist = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(8);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -26146,44 +26146,31 @@ var Events = function (_Component) {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h2',
         null,
-        ' events '
+        ' Events '
       ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'ul',
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-            { to: match.url + '/event 1' },
-            'event 1'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-            { to: match.url + '/event 2' },
-            'event 2'
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'li',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-            { to: match.url + '/event 3' },
-            'event 3'
-          )
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/events/:eventName', render: function render(props) {
-          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Event, props);
-        } })
+      this.makeLinks
     );
   };
+
+  _createClass(Events, [{
+    key: 'makeLinks',
+    get: function get() {
+      var _this2 = this;
+
+      var linkList = this.props.events.map(function (event, index) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'li',
+          { key: index },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+            { to: _this2.props.match.url + '/' + event.fields.eventName },
+            event.fields.eventName
+          )
+        );
+      });
+      return linkList;
+    }
+  }]);
 
   return Events;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
@@ -26198,41 +26185,78 @@ var Events = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(8);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
-var Event = function Event(_ref) {
-  var match = _ref.match;
 
-  //var Event = EventData.find(e => e.name == match.params.EventName);
-  console.log('events', match);
-  var eventData;
+var Event = function (_Component) {
+  _inherits(Event, _Component);
 
-  eventData = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    'div',
-    null,
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'h3',
-      null,
-      match.params.eventName
-    )
-  );
+  function Event(props) {
+    _classCallCheck(this, Event);
 
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    'div',
-    { className: 'component-event' },
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    return _possibleConstructorReturn(this, _Component.call(this, props));
+  }
+
+  Event.prototype.makeEvent = function makeEvent(match) {
+    //let event= this.props.events.map((event, index) => {
+    //console.log('event name ', event.name)
+    var event = this.props.events.find(function (e) {
+      return e.fields.eventName === match.params.eventName;
+    });
+
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h3',
+        null,
+        event.fields.eventName
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h4',
+        null,
+        event.fields.eventDescription
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'p',
+        null,
+        ' ',
+        event.fields.eventDate
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'p',
+        null,
+        ' ',
+        event.fields.eventTime
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img', src: event.fields.eventImageLink, alt: '', width: '50%', height: '50%' })
+    );
+  };
+
+  Event.prototype.render = function render() {
+    var match = this.props.match;
+
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'component-events' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
         { to: '/events' },
         ' Events '
       ),
-      eventData
-    )
-  );
-};
+      this.makeEvent(match)
+    );
+  };
+
+  return Event;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
 /* harmony default export */ __webpack_exports__["a"] = (Event);
 
 /***/ }),

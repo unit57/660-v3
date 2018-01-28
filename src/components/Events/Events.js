@@ -7,9 +7,21 @@ class Events extends Component {
     super(props)
 
   }
-  componentDidMount(){
+  componentDidMount() {
     //console.log('props~~~~~', this.props)
   }
+  get makeLinks() {
+    let linkList = this.props.events.map((event, index) => {
+      return (
+        <li key={index}>
+          <Link to={`${this.props.match.url}/${event.fields.eventName}`}>{event.fields.eventName}
+          </Link>
+        </li>
+      );
+    })
+    return linkList;
+  }
+
   render(){
     //console.log('props~~~~~', this.props)
 
@@ -17,14 +29,10 @@ class Events extends Component {
     //console.log('match', match)
     return (
       <div className='component-category'>
-        <h2> events </h2>
-        <ul>
-          <li><Link to={`${match.url}/event 1`}>event 1</Link></li>
-          <li><Link to={`${match.url}/event 2`}>event 2</Link></li>
-          <li><Link to={`${match.url}/event 3`}>event 3</Link></li>
-        </ul>
-        <Route path={'/events/:eventName'} render={(props)=>(
-            <Event {...props}/>)} />
+        <h2> Events </h2>
+        {this.makeLinks}
+{/*        <Route path={'/events/:eventName'} render={(props)=>(
+            <Event {...props}/>)} />*/}
       </div>
     );
   }

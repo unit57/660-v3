@@ -23,14 +23,14 @@ class Body extends Component {
 					<Route exact={true} path="/" component={Home} />
 					{/*Artists Routes*/}
 					<Route exact path="/artists" render={(props)=>(
-						<Artists {...props} artists={this.props.artistsDefault}/>)} />
+						<Artists {...props} artists={this.props.artists}/>)} />
 					<Route path={'/artists/:name'} render={(props)=>(
-						<Artist {...props} artists={this.props.artistsDefault}/>)} />
+						<Artist {...props} artists={this.props.artists}/>)} />
 					{/*Events Routes*/}
 					<Route exact path="/events" render={(props)=>(
-						<Events {...props} events={this.props.eventsDefault}/>)} />
+						<Events {...props} events={this.props.events}/>)} />
 					<Route path={'/events/:eventName'} render={(props)=>(
-						<Event {...props} events={this.props.eventsDefault}/>)} />
+						<Event {...props} events={this.props.events}/>)} />
 					<Route exact path={'/contact'} component={Contact} />
 					<Route exact path={'/about660'} component={About660} />
 					<Route exact path={'/about-archetype'} component={AboutArchetype} />

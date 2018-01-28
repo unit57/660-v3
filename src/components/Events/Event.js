@@ -1,25 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+class Event extends Component {
+  constructor(props){
+    super(props)
 
-const Event = ({match}) => {
-  //var Event = EventData.find(e => e.name == match.params.EventName);
-  console.log('events', match )
-  var eventData;
+  }
+  makeEvent(match) {
+    //let event= this.props.events.map((event, index) => {
+      //console.log('event name ', event.name)
+      let event = this.props.events.find((e)=>{
+        return e.fields.eventName === match.params.eventName
+      })
+      
+      return (
+             <div>
+               <h3>{event.fields.eventName}</h3>
+               <h4>{event.fields.eventDescription}</h4>
+               <p> {event.fields.eventDate}</p>
+               <p> {event.fields.eventTime}</p>
+               <img className="img" src={event.fields.eventImageLink} alt="" width="50%" height="50%"/>
+             </div>
+      );
+    };
+  
+  render(){
+    let match = this.props.match
 
-    eventData = <div>
-                    <h3>{match.params.eventName}</h3>
-                 </div>
-
-  return (
-    <div className='component-event'>
-      <div>
-        <Link to ="/events"> Events </Link>
-        {eventData}
+    return(
+      <div className="component-events">
+        <Link to='/events'> Events </Link>
+        {this.makeEvent(match)}
       </div>
-    </div>
-
     );
-
+  }
 }
 export default Event;
