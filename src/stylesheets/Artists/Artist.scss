@@ -1,0 +1,31 @@
+.component-artist {
+
+	.artist-wrapper {
+		border: solid black 1px;
+		padding: 25px;
+	}
+	.image-wrapper {
+		margin: 0 auto;
+	}
+	.artist-img {
+		display: block;
+		text-align: center;
+	}
+	.artist-name {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin-bottom: 0;
+		font-size: 25px;
+		font-weight: 700;
+		text-align: center;
+	}
+	.artist-about {}
+	.artist-url {}
+	.back-to-artists {
+		display: inline-block;
+    	margin: 20px;
+    	color: black;
+    	text-decoration: none;
+
+	}
+}

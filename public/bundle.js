@@ -4712,33 +4712,35 @@ var App = function (_Component) {
 	}
 
 	App.prototype.componentDidMount = function componentDidMount() {
-		var _this2 = this;
 
 		// get artists
-		client.getEntries({
-			'content_type': 'artists',
-			order: 'sys.createdAt'
-		}).then(function (artistsResponse) {
-			return artistsResponse.items;
-		}).then(function (artistsItems) {
-			// get events
-			var events = client.getEntries({
-				'content_type': 'event',
-				order: 'sys.createdAt'
-			})
-			// sort events in order by date 
-			.then(function (eventsResponse) {
-				var sortedEvents = eventsResponse.items;
-				return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'], ['asc']);
-			}).then(function (eventsResponse) {
-				// console.log('eventsResponse', eventsResponse)
-				// console.log('artistsResponse', artistsResponse)
-				_this2.setState({
-					artists: artistsItems,
-					events: eventsResponse
-				});
-			});
-		});
+		/*		client.getEntries({
+  			  'content_type': 'artists',
+  			   order: 'sys.createdAt'
+  			})
+  			.then((artistsResponse) => {
+  				return artistsResponse.items	   
+  		})
+  		.then((artistsItems)=>{
+  		// get events
+  			const events = client.getEntries({
+  			  'content_type': 'event',
+  			   order: 'sys.createdAt'
+  			})
+  			// sort events in order by date 
+  			.then((eventsResponse) => {
+  				let sortedEvents = eventsResponse.items;
+  				return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'],['asc']);		
+  			})
+  			.then((eventsResponse)=>{
+  				// console.log('eventsResponse', eventsResponse)
+  				// console.log('artistsResponse', artistsResponse)
+  				this.setState({
+  					artists: artistsItems,
+  					events: eventsResponse
+  				})
+  			})
+  		})*/
 	};
 
 	App.prototype.render = function render() {
@@ -25894,16 +25896,16 @@ var Body = function (_Component) {
 				null,
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_6__Home__["a" /* default */] }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/artists', render: function render(props) {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Artists_Artists__["a" /* default */], _extends({}, props, { artists: _this2.props.artists }));
+						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Artists_Artists__["a" /* default */], _extends({}, props, { artists: _this2.props.artistsDefault }));
 					} }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/artists/:name', render: function render(props) {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Artists_Artist__["a" /* default */], _extends({}, props, { artists: _this2.props.artists }));
+						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Artists_Artist__["a" /* default */], _extends({}, props, { artists: _this2.props.artistsDefault }));
 					} }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/events', render: function render(props) {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Events_Events__["a" /* default */], _extends({}, props, { events: _this2.props.events }));
+						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Events_Events__["a" /* default */], _extends({}, props, { events: _this2.props.eventsDefault }));
 					} }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/events/:eventName', render: function render(props) {
-						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Events_Event__["a" /* default */], _extends({}, props, { events: _this2.props.events }));
+						return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Events_Event__["a" /* default */], _extends({}, props, { events: _this2.props.eventsDefault }));
 					} }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/contact', component: __WEBPACK_IMPORTED_MODULE_7__Contact__["a" /* default */] }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/about660', component: __WEBPACK_IMPORTED_MODULE_8__About660__["a" /* default */] }),
@@ -25926,7 +25928,7 @@ Body.defaultProps = {
 	}, {
 		fields: {
 			about: "Fotget about dre",
-			imageLink: " ",
+			imageLink: "https://www.cicis.com/media/1176/pizza_trad_pepperonibeef.png",
 			name: " Person 2",
 			website: "things.com"
 		}
@@ -25941,11 +25943,11 @@ Body.defaultProps = {
 		}
 	}, {
 		fields: {
-			eventDate: "Event 2",
-			eventDescription: " ",
-			eventImageLink: " ",
-			eventName: " ",
-			eventTime: " "
+			eventDate: "2018-01-24",
+			eventDescription: "Today things will happen and it will be possible",
+			eventImageLink: "http://nohopizza.com/images/pizza.jpeg",
+			eventName: "Event 2",
+			eventTime: "10pm"
 		}
 	}]
 };
@@ -26000,8 +26002,8 @@ var Artists = function (_Component) {
 				' Artists '
 			),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-				'ul',
-				null,
+				'div',
+				{ className: 'artists-container row' },
 				this.makeLinks
 			)
 		);
@@ -26014,12 +26016,25 @@ var Artists = function (_Component) {
 
 			var linkList = this.props.artists.map(function (artist, index) {
 				return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-					'li',
-					{ key: index },
+					__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+					{ className: 'artists-link col-md-4', key: index, to: _this2.props.match.url + '/' + artist.fields.name },
 					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-						__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-						{ to: _this2.props.match.url + '/' + artist.fields.name },
-						artist.fields.name
+						'div',
+						{ className: '' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'artist-container', key: index },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'img-container' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: artist.fields.imageLink, alt: '' })
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'p',
+								{ className: 'artist-name' },
+								artist.fields.name
+							)
+						)
 					)
 				);
 			});
@@ -26058,33 +26073,49 @@ var Artist = function (_Component) {
     return _possibleConstructorReturn(this, _Component.call(this, props));
   }
 
+  Artist.prototype.hasWebpage = function hasWebpage(artist) {
+    if (artist.fields.website) {
+      var fName = artist.fields.name.split(' ')[0];
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'span',
+        null,
+        ' See more from ',
+        fName,
+        '\xA0',
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'a',
+          { className: 'artist-url', href: artist.fields.website, target: '_blank' },
+          'here'
+        ),
+        '.'
+      );
+    }
+  };
+
   Artist.prototype.makeArtist = function makeArtist(match) {
-    //let artist= this.props.artists.map((artist, index) => {
-    //console.log('artist name ', artist.name)
     var artist = this.props.artists.find(function (a) {
       return a.fields.name === match.params.name;
     });
 
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      null,
+      { className: 'artist-wrapper' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h3',
-        null,
-        artist.fields.name
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h4',
-        null,
-        artist.fields.about
+        'div',
+        { className: 'image-wrapper' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'artist-img mx-auto', src: artist.fields.imageLink, alt: '', width: '50%', height: '50%' })
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'p',
-        null,
-        ' ',
-        artist.fields.website
+        { className: 'artist-name' },
+        artist.fields.name
       ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img', src: artist.fields.imageLink, alt: '', width: '50%', height: '50%' })
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'p',
+        { className: 'artist-about' },
+        artist.fields.about
+      ),
+      this.hasWebpage(artist)
     );
   };
 
@@ -26100,11 +26131,11 @@ var Artist = function (_Component) {
     var match = this.props.match;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      { className: 'component-artists' },
+      { className: 'component-artist' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-        { to: '/artists' },
-        ' Artists '
+        { className: 'back-to-artists', to: '/artists' },
+        ' Back to Artists '
       ),
       this.makeArtist(match)
     );

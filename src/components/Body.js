@@ -23,14 +23,14 @@ class Body extends Component {
 					<Route exact={true} path="/" component={Home} />
 					{/*Artists Routes*/}
 					<Route exact path="/artists" render={(props)=>(
-						<Artists {...props} artists={this.props.artists}/>)} />
+						<Artists {...props} artists={this.props.artistsDefault}/>)} />
 					<Route path={'/artists/:name'} render={(props)=>(
-						<Artist {...props} artists={this.props.artists}/>)} />
+						<Artist {...props} artists={this.props.artistsDefault}/>)} />
 					{/*Events Routes*/}
 					<Route exact path="/events" render={(props)=>(
-						<Events {...props} events={this.props.events}/>)} />
+						<Events {...props} events={this.props.eventsDefault}/>)} />
 					<Route path={'/events/:eventName'} render={(props)=>(
-						<Event {...props} events={this.props.events}/>)} />
+						<Event {...props} events={this.props.eventsDefault}/>)} />
 					<Route exact path={'/contact'} component={Contact} />
 					<Route exact path={'/about660'} component={About660} />
 					<Route exact path={'/about-archetype'} component={AboutArchetype} />
@@ -53,7 +53,7 @@ Body.defaultProps = {
 	},{
 		fields:{
 			about:"Fotget about dre",
-			imageLink:" ",
+			imageLink:"https://www.cicis.com/media/1176/pizza_trad_pepperonibeef.png",
 			name:" Person 2",
 			website:"things.com"
 		}
@@ -68,11 +68,11 @@ Body.defaultProps = {
 		}
 	},{
 		fields: {
-			eventDate:"Event 2",
-			eventDescription:" ",
-			eventImageLink:" ",
-			eventName:" ",
-			eventTime:" "
+			eventDate:"2018-01-24",
+			eventDescription:"Today things will happen and it will be possible",
+			eventImageLink:"http://nohopizza.com/images/pizza.jpeg",
+			eventName:"Event 2",
+			eventTime:"10pm"
 		}
 	}]
 }
