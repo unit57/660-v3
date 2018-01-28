@@ -25,8 +25,10 @@ class Event extends Component {
     };
   
   render(){
+    if(!this.props.events) {
+      return <h1> Loading</h1>
+    }
     let match = this.props.match
-
     return(
       <div className="component-events">
         <Link to='/events'> Events </Link>

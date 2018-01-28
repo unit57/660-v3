@@ -25983,9 +25983,14 @@ var Artists = function (_Component) {
 	Artists.prototype.componentDidMount = function componentDidMount() {};
 
 	Artists.prototype.render = function render() {
-
+		if (!this.props.artists) {
+			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'h1',
+				null,
+				' Loading '
+			);
+		}
 		var match = this.props.match;
-
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
 			{ className: 'component-artists' },
@@ -26084,8 +26089,15 @@ var Artist = function (_Component) {
   };
 
   Artist.prototype.render = function render() {
-    var match = this.props.match;
+    if (!this.props.artists) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h1',
+        null,
+        ' Loading '
+      );
+    }
 
+    var match = this.props.match;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'component-artists' },
@@ -26136,8 +26148,15 @@ var Events = function (_Component) {
   };
 
   Events.prototype.render = function render() {
-    //console.log('props~~~~~', this.props)
 
+    //console.log('props~~~~~', this.props)
+    if (!this.props.events) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h1',
+        null,
+        ' Loading '
+      );
+    }
     var match = this.props.match;
     //console.log('match', match)
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -26240,8 +26259,14 @@ var Event = function (_Component) {
   };
 
   Event.prototype.render = function render() {
+    if (!this.props.events) {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h1',
+        null,
+        ' Loading'
+      );
+    }
     var match = this.props.match;
-
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'component-events' },

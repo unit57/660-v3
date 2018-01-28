@@ -23,16 +23,17 @@ class Events extends Component {
   }
 
   render(){
+    
     //console.log('props~~~~~', this.props)
-
+    if(!this.props.events) {
+      return <h1> Loading </h1>
+    }
     let match = this.props.match;
     //console.log('match', match)
     return (
       <div className='component-category'>
         <h2> Events </h2>
         {this.makeLinks}
-{/*        <Route path={'/events/:eventName'} render={(props)=>(
-            <Event {...props}/>)} />*/}
       </div>
     );
   }

@@ -24,8 +24,11 @@ class Artist extends Component {
     };
   
   render(){
+    if(!this.props.artists) {
+        return <h1> Loading </h1>
+    }
+    
     let match = this.props.match
-
     return(
       <div className="component-artists">
         <Link to='/artists'> Artists </Link>
