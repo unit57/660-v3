@@ -17,7 +17,7 @@ class Contact extends Component {
 		return (
 			<div className='component-contact'>
 				<h2> Contact </h2>
-				<form className="contact-form" target="_blank" action="https://formspree.io/eric.q.sanchez@gmail.com"
+				<form className="contact-form" action="https://formspree.io/eric.q.sanchez@gmail.com"
 				      method="POST">
 					<div className="form-body">
 						<span className="form-label"> Send us a message </span>
