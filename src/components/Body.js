@@ -7,8 +7,12 @@ import Event from './Events/Event';
 import Home from './Home';
 
 import Contact from './Contact';
-import About660 from './About660';
-import AboutArchetype from './AboutArchetype';
+import About660 from './About/660';
+import Archetype from './About/Archetype';
+import AfterSchool from './About/AfterSchool';
+import DustbowlSociety from './About/DustbowlSociety';
+import MadFuture from './About/MadFuture';
+
 import Location from './Location';
 import ContactThankYou from './ContactThankYou';
 
@@ -21,22 +25,27 @@ class Body extends Component {
 	render(){
 		//console.log('propsbody', this.props.artists)
 		return(
-			<div className='component-body'>		
+			<div className='component-body'>
 				<Switch>
 					<Route exact={true} path="/" component={Home} />
 					{/*Artists Routes*/}
 					<Route exact path="/artists" render={(props)=>(
 						<Artists {...props} artists={this.props.artistsDefault}/>)} />
 					<Route path={'/artists/:name'} render={(props)=>(
-						<Artist {...props} artists={this.props.artistsDefault}/>)} />
+						<Artist {...props} artists={this.props.artists}/>)} />
 					{/*Events Routes*/}
 					<Route exact path="/events" render={(props)=>(
 						<Events {...props} events={this.props.eventsDefault}/>)} />
 					<Route path={'/events/:eventName'} render={(props)=>(
-						<Event {...props} events={this.props.eventsDefault}/>)} />
+						<Event {...props} events={this.props.events}/>)} />
 					<Route exact path={'/contact'} component={Contact} />
+					{/* ABOUT ROUTES */}
 					<Route exact path={'/about660'} component={About660} />
-					<Route exact path={'/about-archetype'} component={AboutArchetype} />
+					<Route exact path={'/archetype'} component={Archetype} />
+					<Route exact path={'/after-school'} component={AfterSchool} />
+					<Route exact path={'/dustbowl-society'} component={DustbowlSociety} />
+					<Route exact path={'/mad-future'} component={MadFuture} />
+
 					<Route exact path={'/location'} component={Location} />
 					<Route exact path={'/thankyou'} component={ContactThankYou} />
 				</Switch>
@@ -99,7 +108,3 @@ Body.defaultProps = {
 }
 
 export default Body;
-
-
-
-

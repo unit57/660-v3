@@ -32,14 +32,14 @@ class App extends Component {
 	}
 
 	componentDidMount(){
-		
+
 		// get artists
-		/*client.getEntries({
+		client.getEntries({
 			  'content_type': 'artists',
 			   order: 'sys.createdAt'
 			})
 			.then((artistsResponse) => {
-				return artistsResponse.items	   
+				return artistsResponse.items
 		})
 		.then((artistsItems)=>{
 		// get events
@@ -47,10 +47,10 @@ class App extends Component {
 			  'content_type': 'event',
 			   order: 'sys.createdAt'
 			})
-			// sort events in order by date 
+			// sort events in order by date
 			.then((eventsResponse) => {
 				let sortedEvents = eventsResponse.items;
-				return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'],['asc']);		
+				return sortedEvents = _.orderBy(sortedEvents, ['fields.eventDate'],['asc']);
 			})
 			.then((eventsResponse)=>{
 				// console.log('eventsResponse', eventsResponse)
@@ -60,11 +60,11 @@ class App extends Component {
 					events: eventsResponse
 				})
 			})
-		})*/
+		})
 	}
 
 	render() {
-/*	console.log('get event model', this.state.events)	
+/*	console.log('get event model', this.state.events)
 	console.log('get artist model', this.state.artists)	*/
 		return (
 			<div className="component-app container-fluid">

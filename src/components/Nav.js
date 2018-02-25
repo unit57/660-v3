@@ -22,16 +22,19 @@ class Nav extends Component {
 						<div className="dropdown">
 						 	<Link to="/artists"><button className="dropbtn">Artists</button></Link>
 						</div>
-						
+
 						<div className="dropdown">
 						 	<Link to="/events"><button className="dropbtn">Events</button></Link>
 						</div>
-		
+
 						<div className="dropdown">
 						 	<button className="dropbtn">About</button>
 						  		<div className="dropdown-content">
-								    <Link to ="/about660">About 660</Link>
-								    <Link to ="/about-archetype">About Archetype</Link>
+								    <Link to ="/about660">660 Studios</Link>
+								    <Link to ="/archetype">Archetype</Link>
+								    <Link to ="/after-school">After School</Link>
+								    <Link to ="/dustbowl-society">Dustbowl Society</Link>
+								    <Link to ="/mad-future">Mad Future</Link>
 								    {/*<a href="#">Link 3</a>*/}
 						  		</div>
 						</div>

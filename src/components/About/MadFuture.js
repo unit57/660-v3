@@ -3,20 +3,20 @@ import React, { Component } from 'react';
 
 
 
-class AboutArchetype extends Component {
+class MadFuture extends Component {
 	constructor(props){
 		super(props)
 
 	}
 	componentDidMount() {
-	
+
 	}
-	
+
 	render(){
-		
+
 		return (
-			<div className='component-AboutArchetype'>
-				<h2> About Archetype </h2>
+			<div className='component-about-mad-future'>
+				<h2> About MadFuture </h2>
 			</div>
 		);
 	}
@@ -25,5 +25,4 @@ class AboutArchetype extends Component {
 
 
 
-export default AboutArchetype;
-
+export default MadFuture;

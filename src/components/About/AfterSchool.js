@@ -3,20 +3,20 @@ import React, { Component } from 'react';
 
 
 
-class About660 extends Component {
+class AfterSchool extends Component {
 	constructor(props){
 		super(props)
 
 	}
 	componentDidMount() {
-	
+
 	}
-	
+
 	render(){
-		
+
 		return (
-			<div className='component-About660'>
-				<h2> About 660 </h2>
+			<div className='component-about-after-school'>
+				<h2> About AfterSchool </h2>
 			</div>
 		);
 	}
@@ -25,5 +25,4 @@ class About660 extends Component {
 
 
 
-export default About660;
-
+export default AfterSchool;
